@@ -10,5 +10,23 @@
   "unused": true,
   "boss": true,
   "eqnull": true,
-  "node": true
+  "node": true,
+  "indent": 2,
+  "expr": true,
+  "quotmark": "single",
+  "freeze": true,
+  "strict": true,
+  "maxdepth": 4,
+  "maxstatements": 100,
+  "maxcomplexity": 100,
+  "maxlen": 100,
+  "globals": { },
+  "predef": [
+    "describe",
+    "it",
+    "before",
+    "beforeEach",
+    "after",
+    "afterEach"
+  ]
 }
