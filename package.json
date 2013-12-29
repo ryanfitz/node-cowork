@@ -27,6 +27,7 @@
   "scripts": {
     "test": "grunt test"
   },
+  "keywords": ["job", "queue", "worker", "background", "aws", "sqs"],
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.8.0",
@@ -35,7 +36,6 @@
     "mocha": "~1.16.2",
     "chai": "~1.8.1"
   },
-  "keywords": [],
   "dependencies": {
     "aws-sdk": "~2.0.0-rc4",
     "lodash": "~2.4.1",

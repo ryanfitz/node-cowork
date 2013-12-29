@@ -7,14 +7,24 @@ Install the module with: `npm install cowork`
 
 ```javascript
 var cowork = require('cowork');
-cowork.awesome(); // "awesome"
+
+var worker = function (job, callback) {
+  console.log('process job', job);
+  return callback();
+};
+
+var jobs = cowork.createQueue(worker, settings);
+
+jobs.push({foo: 'bar'});
+
+jobs.process
 ```
 
 ## Documentation
 _(Coming soon)_
 
 ## Examples
-_(Coming soon)_
+See examples folder
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
@@ -23,5 +33,5 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2013 Ryan Fitzgerald  
+Copyright (c) 2013 Ryan Fitzgerald
 Licensed under the MIT license.

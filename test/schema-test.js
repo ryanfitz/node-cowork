@@ -6,6 +6,10 @@ var Schema = require('../lib/schema'),
 describe('Schema', function () {
 
   describe('#queue', function () {
+    it('fails when passing no args', function (done) {
+      expect(Schema.queue()).to.exist;
+      done();
+    });
 
     it('fails when passing null', function (done) {
       var settings = null;
@@ -86,6 +90,14 @@ describe('Schema', function () {
       done();
     });
 
+    it('succeeds with valid concurrency setting', function () {
+      var settings = {
+        queueURL: 'https://sqs.us-east-1.amazonaws.com/123/example-job-queue',
+        concurrency: 5
+      };
+
+      expect(Schema.queue(settings)).to.not.exist;
+    });
   });
 
 });
