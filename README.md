@@ -17,7 +17,7 @@ var jobs = cowork.createQueue(worker, settings);
 
 jobs.push({foo: 'bar'});
 
-jobs.process
+jobs.process();
 ```
 
 ## Documentation
