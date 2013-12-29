@@ -1,6 +1,6 @@
 # cowork [![Build Status](https://secure.travis-ci.org/ryanfitz/node-cowork.png?branch=master)](http://travis-ci.org/ryanfitz/node-cowork)
 
-job queue backed by AWS
+distributed job queue backed by AWS
 
 ## Getting Started
 Install the module with: `npm install cowork`
