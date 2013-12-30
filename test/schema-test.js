@@ -98,6 +98,48 @@ describe('Schema', function () {
 
       expect(Schema.queue(settings)).to.not.exist;
     });
+
+    it('succeeds with setting access Keys', function () {
+      var settings = {
+        queueURL: 'https://sqs.us-east-1.amazonaws.com/123/example-job-queue',
+        accessKeyId: 'AK12346',
+        secretAccessKey: 'secret'
+      };
+
+      expect(Schema.queue(settings)).to.not.exist;
+    });
+
+    it('fails when only setting accessKeyId', function (done) {
+
+      var settings = {
+        queueURL: 'https://sqs.us-east-1.amazonaws.com/123/example-job-queue',
+        accessKeyId: 'AK12346'
+      };
+
+      expect(Schema.queue(settings)).to.exist;
+      done();
+    });
+
+    it('fails when only setting secretAccessKey', function (done) {
+
+      var settings = {
+        queueURL: 'https://sqs.us-east-1.amazonaws.com/123/example-job-queue',
+        secretAccessKey: 'secret'
+      };
+
+      expect(Schema.queue(settings)).to.exist;
+      done();
+    });
+
+    it('succeeds with setting region', function () {
+      var settings = {
+        queueURL: 'https://sqs.us-east-1.amazonaws.com/123/example-job-queue',
+        region: 'us-east-1'
+      };
+
+      expect(Schema.queue(settings)).to.not.exist;
+    });
+
   });
 
 });
